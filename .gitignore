@@ -1,5 +1,6 @@
-*.pyc
+*pyc
 *~
 /static
 __pycache__
 kigurumi_db/settings.py
+/venv
