@@ -32,6 +32,11 @@ class Studio(models.Model):
 
     def publish(self):
         self.last_updated = timezone.now()
+        self.save()
+
+    def update(self):
+        self.last_updated = timezone.now()
+        self.save()
 
     def __str__(self):
         return self.name

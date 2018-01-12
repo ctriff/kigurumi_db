@@ -1,0 +1,35 @@
+
+<div>
+  <table>
+    <tr>
+      <td>
+        Studio Name
+      </td>
+      <td>
+        URL
+      </td>
+      <td>
+        Twitter
+      </td>
+      <td>
+        Language
+      </td>
+    </tr>
+    <tr>
+    {% for studio in studios %}
+    <td>
+      {{ studio.name }}
+    </td>
+    <td>
+      <a href="{{ studio.url }}" target="_blank">{{ studio.url }}</a>
+    </td>
+    <td>
+      {{ studio.twitter }}
+    </td>
+    <td>
+      {{ studio.language }}
+    </td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
