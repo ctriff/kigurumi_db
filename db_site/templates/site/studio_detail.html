@@ -13,17 +13,24 @@
           <b>Twitter</b>
       </td>
       <td>
+          <b>Facebook</b>
+      </td>
+      <td>
+          <b>YouTube</b>
+      </td>
+      <td>
           <b>Language</b>
       </td>
       <td>
           <b>Country</b>
       </td>
+      <td>
+          <b>Sells Itnl?</b>
+      </td>
     </tr>
     <tr>
-    {% for studio in studios %}
-    {% if studio.is_approved %}
     <td>
-      <a href="{% url 'get_studio' pk=studio.pk %}">{{ studio.name }}</a>
+      {{ studio.name }}
     </td>
     <td>
       <a href="{{ studio.url }}" target="_blank">{{ studio.url }}</a>
@@ -32,14 +39,23 @@
       <a href="http://www.twitter.com/{{ studio.twitter }}" target="_blank">{{ studio.twitter }}</a>
     </td>
     <td>
+      <a href="http://www.twitter.com/{{ studio.facebook }}" target="_blank">{{ studio.facebook }}</a>
+    </td>
+    <td>
+      <a href="http://www.twitter.com/{{ studio.youtube }}" target="_blank">{{ studio.youtube }}</a>
+    </td>
+    <td>
       {{ studio.language }}
     </td>
     <td>
       {{ studio.country}}
     </td>
+    <td>
+      {% if studio.ship_international %}
+      <font color="green">Yes</font>
+      {% endif %}
+    </td>
     </tr>
-    {% endif %}
-    {% endfor %}
   </table>
 </div>
 {% endblock %}

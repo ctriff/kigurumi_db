@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Studio
 # Create your views here.
@@ -6,3 +6,7 @@ from .models import Studio
 def studios_list(request):
     studios = Studio.objects.all()
     return render(request, 'site/studios_list.html', {'studios':studios})
+
+def get_studio(request, pk):
+    studio = get_object_or_404(Studio, pk=pk)
+    return render(request, 'site/studio_detail.html', {'studio':studio})
