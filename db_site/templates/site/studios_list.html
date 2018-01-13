@@ -16,7 +16,7 @@
     <tbody>
     {% for studio in studios %}
     {% if studio.is_approved %}
-    <tr>
+    <tr align="center">
     <th scope="row">
       <a href="{% url 'get_studio' pk=studio.pk %}">{{ studio.name }}</a>
     </th>
