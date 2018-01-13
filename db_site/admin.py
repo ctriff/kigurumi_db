@@ -6,9 +6,9 @@ from .models import Studio
 
 class StudioAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields':['name', 'url','country', 'region', 'language', 'is_active_comment']}),
+        (None, {'fields':['name', 'url','country', 'region', 'language', 'is_active_comment', 'ship_international']}),
         ('Social Media', {'fields':['twitter', 'facebook', 'instagram','youtube']}),
-        ('Administrative', {'fields':['date_added', 'date_updated', 'is_approved', 'added_by', 'approved_by']}),
+        ('Administrative', {'fields':['date_added', 'date_updated', 'is_approved', 'added_by', 'approved_by','price_min', 'price_max']}),
         ]
     def save_model(self, request, obj, form, change):
         obj.date_updated = timezone.now()
