@@ -5,7 +5,7 @@ from .models import Studio
 
 def studios_list(request):
     studios = Studio.objects.all()
-    studios.sort_by('name')
+    studios = studios.sort_by('name')
     return render(request, 'site/studios_list.html', {'studios':studios})
 
 def get_studio(request, pk):
