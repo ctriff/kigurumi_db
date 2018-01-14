@@ -12,23 +12,31 @@
           URL
       </th>
       <th scope="col">
-          Twitter
-      </th>
-      <th scope="col">
-          Facebook
-      </th>
-      <th scope="col">
-          YouTube
-      </th>
-      <th scope="col">
           Language
       </th>
       <th scope="col">
           Country
       </th>
+      {% if studio.sells_international %}
       <th scope="col">
           Sells Itnl?
       </th>
+      {% endif %}
+      {% if studio.twitter %}
+      <th scope="col">
+          Twitter
+      </th>
+      {% endif %}
+      {% if studio.facebook %}
+      <th scope="col">
+          Facebook
+      </th>
+      {% endif %}
+      {% if studio.youtube %}
+      <th scope="col">
+          YouTube
+      </th>
+      {% endif %}
       </tr>
       </thead>
       <tbody>
@@ -38,25 +46,32 @@
       <a href="{{ studio.url }}" target="_blank">{{ studio.url }}</a>
     </td>
     <td>
-      <a href="http://www.twitter.com/{{ studio.twitter }}" target="_blank">{{ studio.twitter }}</a>
-    </td>
-    <td>
-      <a href="http://www.facebook.com/{{ studio.facebook }}" target="_blank">{{ studio.facebook }}</a>
-    </td>
-    <td>
-      <a href="http://www.youtube.com/user/{{ studio.youtube }}" target="_blank">{{ studio.youtube }}</a>
-    </td>
-    <td>
       {{ studio.language }}
     </td>
     <td>
       {{ studio.country}}
     </td>
+    {% if studio.sells_international %}
     <td>
-      {% if studio.ship_international %}
       <font color="green">Yes</font>
-      {% endif %}
+
     </td>
+    {% endif %}
+    {% if studio.twitter %}
+    <td>
+      <a href="http://www.twitter.com/{{ studio.twitter }}" target="_blank">{{ studio.twitter }}</a>
+    </td>
+    {% endif %}
+    {% if studio.facebook %}
+    <td>
+      <a href="http://www.facebook.com/{{ studio.facebook }}" target="_blank">{{ studio.facebook }}</a>
+    </td>
+    {% endif %}
+    {% if studio.youtube %}
+    <td>
+      <a href="http://www.youtube.com/user/{{ studio.youtube }}" target="_blank">{{ studio.youtube }}</a>
+    </td>
+    {% endif %}
     </tr>
     </tbody>
   </table>
